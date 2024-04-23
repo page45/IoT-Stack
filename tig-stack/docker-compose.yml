@@ -39,6 +39,23 @@ services:
       - 1883:1883  
       - 9001:9001
 
+  # zigbee2mqtt:
+  #   container_name: zigbee2mqtt
+  #   image: koenkk/zigbee2mqtt
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./data:/app/data
+  #     - /run/udev:/run/udev:ro
+  #   ports:
+  #     # Frontend port
+  #     - 8080:8080
+  #   environment:
+  #     - TZ=America/Indianapolis
+  #   devices:
+  #     # Make sure this matched your adapter location
+  #     - USB\VID_10C4&PID_EA60\5807B95F6245ED1188D2C88F0A86E0B4
+  #     #/dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00:/dev/ttyACM0
+
 volumes:
   grafana-storage:
   influxdb-storage:
